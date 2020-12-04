@@ -17,7 +17,7 @@ _comp_options+=(globdots)		# Include hidden files.
 
 # vi mode
 bindkey -v
-export KEYTIMEOUT=1
+export KEYTIMEOUT=0.5
 
 fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
@@ -52,18 +52,6 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-}
-bindkey -s '^o' 'lfcd\n'
-
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
@@ -75,6 +63,7 @@ bindkey '^e' edit-command-line
 # Load zsh-syntax-highlighting; should be last.
 export LANG=en_US.UTF-8
 #zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "b4b4r07/enhancd", use:init.sh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
@@ -88,7 +77,6 @@ eval "$(starship init zsh)"
 # Alias for git bare repository
 # Ctrl + Space to accept the suggestion
 bindkey '^ ' autosuggest-accept
-source ~/z.sh
 source /opt/ros/melodic/setup.zsh
 export PYTHONPATH=${PYTHONPATH}:/home/rahul/naoqi/pynaoqi-python2.7-2.5.5.5-linux64/lib/python2.7/site-packages
 export PATH="/home/rahul/.pyenv/bin:$PATH"
@@ -100,6 +88,10 @@ export DOTBARE_FZF_DEFAULT_OPTS="--preview-window=right:65%"
 export EDITOR=nvim
 
 # FZF configs.
-export FZF_DEFAULT_COMMAND='fd --type f --hidden '
+#export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.dotbare/dotbare.plugin.zsh
+
+# zsh-bd
+. $HOME/.zsh/plugins/bd/bd.zsh
