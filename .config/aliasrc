@@ -1,0 +1,26 @@
+alias vim='nvim'
+alias mux='pgrep -vx tmux > /dev/null && tmux new -d -s delete-me && tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh && tmux kill-session -t delete-me && tmux attach || tmux attach'
+
+# arandr monitor settings
+alias shm='~/.screenlayout/home-single-monitor.sh'
+alias shv='~/.screenlayout/vertical-monitor.sh'
+# utilities
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias more=less
+alias gh="cd ~/"
+
+# Git specific
+alias gs='git status '
+alias gl='git log'
+
+# dotbare specific
+alias dot='dotbare'
+alias dff='dotbare fadd -f'
+alias dfd='dotbare fadd -d'
+alias dfe='dotbare fedit'
+alias dfs='dotbare fstat'
+alias dfl='dotbare flog'
+# tmux scratchpad
+alias tsp='tmux attach -t scratchpad'
