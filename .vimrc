@@ -50,7 +50,6 @@ Plug 'junegunn/fzf'
 " Git Based  
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/gv.vim'
 Plug 'sheerun/vim-polyglot'
