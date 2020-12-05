@@ -1,0 +1,10 @@
+[user]
+	email = sunny.rahul@tutanota.com
+	name = Sunny Rahul
+	editor = 'nvim'
+[http]
+	postBuffer = 157286400
+[core]
+	editor = nvim
+[alias]
+	s = status
