@@ -17,12 +17,6 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'lervag/vimtex'
 Plug 'KeitaNakamura/tex-conceal.vim'
 
-" Markdown
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'https://github.com/alok/notational-fzf-vim'
-Plug 'vim-pandoc/vim-pandoc'
-
 
 "Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 "let g:instant_markdown_mathjax = 1
@@ -37,22 +31,17 @@ let g:vim_markdown_math = 1
 
 Plug 'psliwka/vim-smoothie'
 
-"Vim zettle
-Plug 'michal-h21/vim-zettel'
-Plug 'vimwiki/vimwiki'
-let g:vimwiki_list = [{'path':'~/scratchbox/vimwiki/markdown/','ext':'.md','syntax':'markdown', 'zettel_template': "~/mytemplate.tpl"}, {"path":"~/scratchbox/vimwiki/wiki/"}]
-let g:nv_search_paths = ['~/scratchbox/vimwiki/markdown']
-let g:zettel_options = [{"template" :  "~/scratchbox/vimwiki/newnote.tpl"}]
 "Fuzzy Findder
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
-" R markdown 
+
 " Git Based  
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/gv.vim'
 Plug 'sheerun/vim-polyglot'
+
 "Themes
 Plug 'Rigellute/rigel'
 Plug 'morhetz/gruvbox'
