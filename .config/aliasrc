@@ -12,8 +12,7 @@ alias more=less
 alias gh="cd ~/"
 
 # Git specific
-alias gs='git status '
-alias gl='git log'
+alias g='git'
 
 # dotbare specific
 alias dot='dotbare'
