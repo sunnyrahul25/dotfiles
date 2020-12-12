@@ -23,3 +23,12 @@ alias dfs='dotbare fstat'
 alias dfl='dotbare flog'
 # tmux scratchpad
 alias tsp='tmux attach -t scratchpad'
+# youtube dl
+alias ydl='youtube-dl -f best'
+# pomodoros
+alias b10='bash ~/pomo.sh 600'
+alias b20='bash ~/pomo.sh 1200'
+alias p1='bash ~/pomo.sh 3000'
+alias p2='bash ~/pomo.sh 6000'
+alias p3='bash ~/pomo.sh 12000'
+alias p4='bash ~/pomo.sh 18000'
