@@ -1,5 +1,5 @@
 #bindkey -M vicmd "k" history-substring-search-up zshrc file is from lukesmith.xyz
-if [ ! -f ~/.zplug/init.zsh ]; then
+if [ ! -f "~/.zplug/init.zsh" ]; then
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
 source ~/.zplug/init.zsh
@@ -25,12 +25,14 @@ export KEYTIMEOUT=0.5
 fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
 }
+
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+
 #bindkey '^R' history-incremental-search-backward
 #bindkey '^R' fh()
 
@@ -76,10 +78,18 @@ zplug load
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_DOCKER_SHOW=false
 
+
 eval "$(starship init zsh)"
 # Alias for git bare repository
 # Ctrl + Space to accept the suggestion
 bindkey '^ ' autosuggest-accept
+
+# Check if dotbare is installed or not
+if [ ! -d "~/.dotbare" ]; then
+  # Take action if $DIR exists. #
+  echo "Installing config files in ${DIR}..."
+  export PATH="/home/rahul/.pyenv/bin:$PATH"
+fi
 
 # Dotbare configs
 export DOTBARE_DIR="$HOME/.cfgs"
