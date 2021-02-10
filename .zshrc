@@ -1,5 +1,6 @@
 #bindkey -M vicmd "k" history-substring-search-up zshrc file is from lukesmith.xyz
-if [ ! -f "~/.zplug/init.zsh" ]; then
+if [ ! -d ~/.zplug ]; then
+  echo "does not exist"
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
 source ~/.zplug/init.zsh
@@ -85,7 +86,7 @@ eval "$(starship init zsh)"
 bindkey '^ ' autosuggest-accept
 
 # Check if dotbare is installed or not
-if [ ! -d "~/.dotbare" ]; then
+if [ ! -d ~/.dotbare ]; then
   # Take action if $DIR exists. #
   echo "Installing config files in ${DIR}..."
   export PATH="/home/rahul/.pyenv/bin:$PATH"
