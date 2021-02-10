@@ -1,5 +1,8 @@
 #bindkey -M vicmd "k" history-substring-search-up zshrc file is from lukesmith.xyz
-source /usr/share/zsh/scripts/zplug/init.zsh 
+if [ ! -f ~/.zplug/init.zsh ]; then
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+fi
+source ~/.zplug/init.zsh
 autoload -U colors && colors
 
 
@@ -77,10 +80,6 @@ eval "$(starship init zsh)"
 # Alias for git bare repository
 # Ctrl + Space to accept the suggestion
 bindkey '^ ' autosuggest-accept
-source /opt/ros/melodic/setup.zsh
-export PYTHONPATH=${PYTHONPATH}:/home/rahul/naoqi/pynaoqi-python2.7-2.5.5.5-linux64/lib/python2.7/site-packages
-export PATH="/home/rahul/.pyenv/bin:$PATH"
-PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 # Dotbare configs
 export DOTBARE_DIR="$HOME/.cfgs"
@@ -92,6 +91,3 @@ export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.dotbare/dotbare.plugin.zsh
-
-# zsh-bd
-. $HOME/.zsh/plugins/bd/bd.zsh
