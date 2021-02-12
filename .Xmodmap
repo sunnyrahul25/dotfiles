@@ -1,16 +1,12 @@
-clear lock
-keycode 66 = Mode_switch
-keysym h = h H Left
-keysym l = l L Right
-keysym k = k K Up
-keysym j = j J Down
-keysym u = u U Prior
+! remove Caps Lock
+clear Lock
+! add Mode_switch, Escape is caps lock
+keycode 66 = Mode_switch  Mode_switch
+keycode 45 = k K Up
+keycode 43 = h H Left
+keycode 44 = j J Down
+keycode 46 = l L Right
 keysym i = i I Home
 keysym o = o O End
-keysym p = p P Next
-keycode 111 = 
-keycode 116 = 
-keycode 113 = 
-keycode 114 = 
-
-
+! semicolon
+keycode 47 = semicolon colon F6 
