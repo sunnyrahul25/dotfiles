@@ -2,6 +2,7 @@ st.alpha: 1
 st.font: Fira Code:style=Light:pixelsize=18:antialias=true
 st.termname: st-256color
 st.borderpx: 1
+st.shell: /bin/zsh
 rofi.lines : 10
 rofi.monitor : 0
 
