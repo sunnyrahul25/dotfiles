@@ -32,3 +32,6 @@ alias p1='bash ~/pomo.sh 3000'
 alias p2='bash ~/pomo.sh 6000'
 alias p3='bash ~/pomo.sh 12000'
 alias p4='bash ~/pomo.sh 18000'
+alias ls='exa'
+# Fugitive git bare repo
+alias cvim='GIT_DIR=$HOME/.cfgs GIT_WORK_TREE=$HOME nvim'
