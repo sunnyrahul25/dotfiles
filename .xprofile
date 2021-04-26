@@ -24,9 +24,8 @@ fi
 
 unclutter &		# Remove mouse when idle
 
-exec dwmstatus 2>&1 >/dev/null &
-exec xinput -set-prop "AlpsPS/2 ALPS DualPoint Stick" "Device Enabled" 0 &
-exec xcape -e 'Mode_switch=Escape'
+exec dwmblocks 2>&1 >/dev/null &
+xcape -t 1000 -e 'Mode_switch=Escape'
 while true; do
     # Log stderror to a file 
     dwm 2> ~/.dwm.log
