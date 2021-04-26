@@ -89,9 +89,9 @@ bindkey '^ ' autosuggest-accept
 if [ ! -d ~/.dotbare ]; then
   # Take action if $DIR exists. #
   echo "Installing config files in ${DIR}..."
-  export PATH="/home/rahul/.pyenv/bin:$PATH"
 fi
 
+  export PATH="/home/rahul/.pyenv/bin:$PATH"
 # Dotbare configs
 export DOTBARE_DIR="$HOME/.cfgs"
 export DOTBARE_FZF_DEFAULT_OPTS="--preview-window=right:65%"
@@ -102,3 +102,24 @@ export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.dotbare/dotbare.plugin.zsh
+#https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login
+
+
+
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+        . "/usr/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
