@@ -8,5 +8,7 @@ keycode 44 = j J Down
 keycode 46 = l L Right
 keysym i = i I Home
 keysym o = o O End
+! mpping missed key on my laptop
+keycode 39 = s S a
 ! semicolon
 keycode 47 = semicolon colon F6 
