@@ -50,9 +50,9 @@
 ;(unpin! t)
 (package! modus-operandi-theme)
 (package! org-ref)
-(package! org-download)
 (package! darkroom)
-
+(package! org-download
+  :recipe (:host github :repo "abo-abo/org-download"))
 
 (package! org-roam-bibtex
   :recipe (:host github :repo "org-roam/org-roam-bibtex"))
@@ -62,3 +62,19 @@
 
 ;; When using bibtex-completion via the `biblio` module
 (unpin! bibtex-completion helm-bibtex ivy-bibtex)
+(package! yequake)
+(package! consult)
+(package! org-clock-convenience)
+(package! org-sidebar)
+(package! ox-hugo
+  :recipe (:host github :repo "jethrokuan/ox-hugo"))
+(package! org-roam-server )
+(package! org-appear)
+(package! org-roam-server-light
+  :recipe (:host github :repo "AloisJanicek/org-roam-server-light"
+           :files ("*")))
+(package! org-transclusion
+  :recipe (:host github
+           :repo "nobiot/org-transclusion"
+           :branch "main"
+           :files ("org-transclusion.el")))
